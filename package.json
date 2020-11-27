@@ -1,0 +1,25 @@
+{
+  "name": "uactoken",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blaisearius/uactoken.git"
+  },
+  "author": "Blaise Arius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blaisearius/uactoken/issues"
+  },
+  "homepage": "https://github.com/blaisearius/uactoken#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0"
+  }
+}
