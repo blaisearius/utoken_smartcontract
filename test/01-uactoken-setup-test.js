@@ -1,16 +1,16 @@
-var UACToken = artifacts.require("./UACToken.sol");
+var UToken = artifacts.require("./UToken.sol");
 
-contract('UACToken', (accounts) => {
+contract('UToken', (accounts) => {
     var total = 100000000;
-    var nom = "UAC Token";
-    var code = "UACT";
+    var nom = "UToken";
+    var code = "UT";
 
     // Test if token name is defined
     it('definir le nom du token', () => {
-        return UACToken.deployed()
+        return UToken.deployed()
         .then((instance) => {
-            UACTokenInstance = instance;
-            return UACTokenInstance.name();
+            UTokenInstance = instance;
+            return UTokenInstance.name();
         })
         .then((nomToken) =>{
             assert.equal(nomToken, nom, "Le nom du Token est défini.");
@@ -19,10 +19,10 @@ contract('UACToken', (accounts) => {
 
     // Test if the token symbol is defined
     it('definir le symbol du token', () =>{
-        return UACToken.deployed()
+        return UToken.deployed()
         .then(function(instance){
-            UACTokenInstance = instance;
-            return UACTokenInstance.symbol();
+            UTokenInstance = instance;
+            return UTokenInstance.symbol();
         })
         .then((symbolToken) =>{
             assert.equal(symbolToken, code, "Le symbol du Token est bien défini.");
@@ -31,9 +31,9 @@ contract('UACToken', (accounts) => {
 
     // Test if totalSupply has been defined
     it('vérifier le totalSupply au déploiement', () => {
-        return UACToken.deployed()
-        .then((UACTokenInstance) => {
-            return UACTokenInstance.totalSupply();
+        return UToken.deployed()
+        .then((UTokenInstance) => {
+            return UTokenInstance.totalSupply();
         })
         .then((totalSupply) =>{
             assert.equal(totalSupply.toNumber(), total, "Le total est bien défini à" +total);
@@ -42,9 +42,9 @@ contract('UACToken', (accounts) => {
 
     // Test if admin balance has been credited.
     it("chager le compte de l'administrateur", function(){
-        return UACToken.deployed()
-        .then((UACTokenInstance)=>{
-            return UACTokenInstance.balanceOf(accounts[0]);
+        return UToken.deployed()
+        .then((UTokenInstance)=>{
+            return UTokenInstance.balanceOf(accounts[0]);
         })
         .then(adminBalance => {
             assert.equal(adminBalance.toNumber(), total, "Le compte de l'admin est chargé avec "+ total);

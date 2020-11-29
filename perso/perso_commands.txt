@@ -1,0 +1,4 @@
+Deploy to the Ropsten network
+
+truffle migrate --network ropsten
+

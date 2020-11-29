@@ -1,9 +1,9 @@
-const UACToken = artifacts.require("UACToken");
+const UToken = artifacts.require("UToken");
 
-const name = 'UACToken';
-const symbol = 'UACT';
+const name = 'UToken';
+const symbol = 'UT';
 const decimals = '18';
 const initialSupply = '100000000';
 module.exports = function(deployer) {
-  deployer.deploy(UACToken, name, symbol, decimals, initialSupply);
+  deployer.deploy(UToken, name, symbol, decimals, initialSupply);
 };
